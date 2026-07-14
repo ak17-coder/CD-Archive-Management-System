@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add CD | CD Archive Management System</title>
+
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/add_cd.css' %}">
+    <link rel="stylesheet" href="{% static 'css/view_cd.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <i class="fa-solid fa-compact-disc"></i>
+                <h2>CD Archive</h2>
+            </div>
+
+            <ul class="menu">
+                <li>
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </li>
+
+                <li class="active">
+                    <a href="{% url 'add_cd' %}">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Add CD</span>
+                    </a>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>View CDs</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>Categories</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Reports</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </li>
+            </ul>
+
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div class="page-title">
+                    <h2>Edit CD</h2>
+                    <p>Update CD Information</p>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="notification">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+
+                    <div class="admin-profile">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="form-card">
+                <section class="form-card">
+
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>CD Label <span>*</span></label>
+                                <input type="text" name="cd_label" value="{{ cd.cd_label }}"
+                                    placeholder="Enter CD Label" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Folder Name <span>*</span></label>
+                                <input type="text" name="folder_name" value="{{ cd.folder_name }}"
+                                    placeholder="Enter Folder Name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Folder Path <span>*</span></label>
+
+                                <div class="folder-path">
+                                    <input type="text" id="folderPath" name="folder_path" value="{{ cd.folder_path }}"
+                                        placeholder="Select Folder" readonly required>
+
+                                    <button type="button" class="browse-btn">
+                                        <i class="fa-solid fa-folder-open"></i>
+                                        Browse
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <label>Category <span>*</span></label>
+                                <select name="category">
+
+                                    <option value="NIVSC" {% if cd.category == "NIVSC" %}selected{% endif %}>
+                                        NIVSC
+                                    </option>
+
+                                    <option value="Other" {% if cd.category == "Other" %}selected{% endif %}>
+                                        Other
+                                    </option>
+
+                                    <option value="Sri Sripadaraja Math" {% if cd.category == "Sri Sripadaraja Math" %}selected{% endif %}>
+                                        Sri Sripadaraja Math
+                                    </option>
+
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Year</label>
+                                <input type="number" name="year" value="{{ cd.year }}" placeholder="Example:2004">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Number of Files</label>
+                                <input type="number" name="number_of_files" value="{{ cd.number_of_files }}"
+                                    placeholder="Example:465">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Size</label>
+                                <input type="text" name="size" value="{{ cd.size }}"
+                                    placeholder="Example: 4.16 GB or 983 MB">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <select name="condition">
+                                    <option value="Good" {% if cd.condition == "Good" %}selected{% endif %}>
+                                        Good
+                                    </option>
+
+                                    <option value="Scratched" {% if cd.condition == "Scratched" %}selected{% endif %}>
+                                        Scratched
+                                    </option>
+                                    <option value="Damaged" {% if cd.condition == "Damaged" %}selected{% endif %}>
+                                        Damaged
+                                    </option>
+
+                                    <option value="Not Readable" {% if cd.condition == "Not Readable" %}selected{% endif %}>
+                                        Not Readable
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Copied Date</label>
+                                <input type="date">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea rows="4" placeholder="Enter Description"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Remarks</label>
+                            <textarea rows="3" name="remarks">{{ cd.remarks }}</textarea>
+                        </div>
+
+                        <div class="button-group">
+
+                            <button type="submit" class="save-btn">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Update CD
+                            </button>
+
+                            <button type="reset" class="reset-btn">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

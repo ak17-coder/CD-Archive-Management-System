@@ -1,0 +1,139 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CD Details</title>
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-compact-disc"></i>
+            <h2>CD Archive</h2>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="{% url 'dashboard' %}">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'add_cd' %}">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Add CD</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="{% url 'view_cd' %}">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>View CDs</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="page-title">
+                <h2>CD Details</h2>
+                <p>Complete information about this CD</p>
+            </div>
+
+        </header>
+
+        <div class="form-card">
+
+            <table class="details-table">
+
+                <tr>
+                    <th>CD Label</th>
+                    <td>{{ cd.cd_label }}</td>
+                </tr>
+
+                <tr>
+                    <th>Folder Name</th>
+                    <td>{{ cd.folder_name }}</td>
+                </tr>
+
+                <tr>
+                    <th>Folder Path</th>
+                    <td>{{ cd.folder_path }}</td>
+                </tr>
+
+                <tr>
+                    <th>Category</th>
+                    <td>{{ cd.category }}</td>
+                </tr>
+
+                <tr>
+                    <th>Year</th>
+                    <td>{{ cd.year }}</td>
+                </tr>
+
+                <tr>
+                    <th>Number of Files</th>
+                    <td>{{ cd.number_of_files }}</td>
+                </tr>
+
+                <tr>
+                    <th>Size</th>
+                    <td>{{ cd.size }}</td>
+                </tr>
+
+                <tr>
+                    <th>Condition</th>
+                    <td>{{ cd.condition }}</td>
+                </tr>
+
+                <tr>
+                    <th>Remarks</th>
+                    <td>{{ cd.remarks }}</td>
+                </tr>
+
+            </table>
+
+            <br>
+
+            <a href="{% url 'open_folder' cd.id %}" class="save-btn">
+                <i class="fa-solid fa-folder-open"></i>
+                Open Folder
+            </a>
+
+            <a href="{% url 'edit_cd' cd.id %}" class="reset-btn">
+                <i class="fa-solid fa-pen"></i>
+                Edit
+            </a>
+
+            <a href="{% url 'view_cd' %}" class="reset-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back
+            </a>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CD Archive Management System</title>
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <i class="fa-solid fa-compact-disc"></i>
+                <h2>CD Archive</h2>
+            </div>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="{% url 'dashboard' %}">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'add_cd' %}">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add CD</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'view_cd' %}">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>View CDs</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'categories' %}">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'logout' %}">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div class="page-title">
+                    <h2>Dashboard</h2>
+                    <p>Welcome back, Admin</p>
+                </div>
+
+                <div class="topbar-right">
+
+                
+
+                    <div class="admin-profile">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Admin</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="stats">
+
+                <div class="card">
+                    <div class="card-icon blue">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+
+                    <div class="card-info">
+                        <h3>Total CDs</h3>
+                        <h2>{{ total_cds }}</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon green">
+                        <i class="fa-solid fa-file"></i>
+                    </div>
+
+                    <div class="card-info">
+                        <h3>Total Files</h3>
+                        <h2>{{ total_files }}</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon orange">
+                        <i class="fa-solid fa-hard-drive"></i>
+                    </div>
+
+                    <div class="card-info">
+                        <h3>Total Storage</h3>
+                        <h2>{{ total_storage }}</h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon purple">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div class="card-info">
+                        <h3>Categories</h3>
+                        <h2>{{ total_categories }}</h2>
+                    </div>
+                </div>
+
+            </section>
+            <section class="search-section">
+
+                <h3>Quick Search</h3>
+
+                <form action="{% url 'view_cd' %}" method="GET" class="search-box">
+                    <input type="text" placeholder="Search by CD Name, Year or Category">
+
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        Search
+                    </button>
+
+                </form>
+
+            </section>
+
+            <section class="recent-cds">
+
+                <div class="section-header">
+                    <h3>Recent CDs</h3>
+                    <a href="{% url 'view_cd' %}" class="view-all-btn">
+                        View All
+                    </a>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>CD Name</th>
+                            <th>Category</th>
+                            <th>Year</th>
+                            <th>Files</th>
+                            <th>Size</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for cd in recent_cds %}
+
+                        <tr>
+                            <td>{{ cd.cd_label }}</td>
+                            <td>{{ cd.category }}</td>
+                            <td>{{ cd.year }}</td>
+                            <td>{{ cd.number_of_files }}</td>
+                            <td>{{ cd.size }}</td>
+                            <td>
+                                <span class="status good">{{ cd.condition }}</span>
+                            </td>
+                        </tr>
+
+                        {% empty %}
+
+                        <tr>
+                            <td colspan="6">No CDs Found</td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

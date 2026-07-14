@@ -1,0 +1,172 @@
+/* =========================
+   IMPORT CARD
+========================= */
+
+.import-card{
+    margin-top:30px;
+    background:#fff;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.import-card h2{
+    font-size:30px;
+    color:#1F2937;
+    margin-bottom:10px;
+}
+
+.import-card p{
+    color:#6B7280;
+    margin-bottom:30px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.import-form{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.import-form input[type="file"]{
+    width:100%;
+    padding:15px;
+    border:2px dashed #2563EB;
+    border-radius:10px;
+    background:#F8FAFC;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.import-form input[type="file"]:hover{
+    background:#EFF6FF;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button-group{
+    display:flex;
+    gap:15px;
+}
+
+.import-btn{
+    flex:1;
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    background:#2563EB;
+    color:white;
+    text-decoration:none;
+
+    border:none;
+    border-radius:10px;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.import-btn:hover{
+    background:#1D4ED8;
+}
+
+.cancel-btn{
+    flex:1;
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#6B7280;
+    color:white;
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-weight:600;
+    transition:.3s;
+}
+
+.cancel-btn:hover{
+    background:#4B5563;
+}
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info-box{
+    margin-top:25px;
+
+    padding:18px;
+
+    background:#EFF6FF;
+
+    border-left:5px solid #2563EB;
+
+    border-radius:8px;
+
+    color:#374151;
+}
+
+.info-box h4{
+    margin-bottom:10px;
+    color:#1E3A8A;
+}
+
+.info-box ul{
+    padding-left:20px;
+}
+
+.info-box li{
+    margin-bottom:8px;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.alert-success{
+    background:#D1FAE5;
+    color:#065F46;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.alert-error{
+    background:#FEE2E2;
+    color:#991B1B;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:600;
+}

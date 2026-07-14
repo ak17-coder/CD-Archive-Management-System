@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+</head>
+
+<body>
+
+    <h2>Categories</h2>
+
+    <table class="cd-table">
+
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Category</th>
+                <th>Total CDs</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for item in categories %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+
+                <td>{{ item.category }}</td>
+
+                <td>{{ item.total }}</td>
+
+                <td>
+                    <a href="{% url 'view_cd' %}?search={{ item.category }}" class="view-btn">
+                        View CDs
+                    </a>
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+</body>
+
+</html>

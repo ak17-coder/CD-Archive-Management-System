@@ -1,0 +1,318 @@
+/* =========================
+   TABLE CARD
+========================= */
+
+.table-card{
+    margin-top:30px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.table-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.table-header h3{
+    font-size:24px;
+    color:#1F2937;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.add-btn,
+.export-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    width:180px;
+    height:45px;
+
+    background:#2563EB;
+    color:#fff !important;
+
+    text-decoration:none !important;
+
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+.export-btn{
+    background:#198754;
+}
+
+.add-btn:hover{
+    background:#1D4ED8;
+    text-decoration:none;
+}
+
+.export-btn:hover{
+    background:#157347;
+    text-decoration:none;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.search-bar{
+    margin-bottom:25px;
+}
+
+.search-bar form{
+    display:flex;
+    gap:10px;
+}
+
+.search-bar input{
+    flex:1;
+    height:45px;
+    padding:0 15px;
+    border:1px solid #D1D5DB;
+    border-radius:10px;
+    font-size:15px;
+}
+
+.search-bar input:focus{
+    outline:none;
+    border-color:#2563EB;
+}
+
+.search-bar button,
+.clear-btn{
+    width:140px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    border:none;
+    border-radius:10px;
+
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.search-bar button{
+    background:#2563EB;
+    color:#fff;
+}
+
+.search-bar button:hover{
+    background:#1D4ED8;
+}
+
+.clear-btn{
+    background:#6B7280;
+    color:#fff;
+}
+
+.clear-btn:hover{
+    background:#4B5563;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.cd-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+
+.cd-table th{
+    background:#F3F4F6;
+    color:#1F2937;
+    padding:15px;
+    text-align:left;
+    font-weight:600;
+}
+
+.cd-table td{
+    padding:15px;
+    border-bottom:1px solid #E5E7EB;
+    vertical-align:middle;
+}
+
+/* Column Widths */
+
+.cd-table th:nth-child(1),
+.cd-table td:nth-child(1){
+    width:60px;
+    text-align:center;
+}
+
+.cd-table th:nth-child(2),
+.cd-table td:nth-child(2){
+    width:340px;
+}
+
+.cd-table th:nth-child(3),
+.cd-table td:nth-child(3){
+    width:260px;
+}
+
+.cd-table th:nth-child(4),
+.cd-table td:nth-child(4){
+    width:120px;
+    text-align:center;
+}
+
+.cd-table th:nth-child(5),
+.cd-table td:nth-child(5){
+    width:80px;
+    text-align:center;
+}
+
+.cd-table th:nth-child(6),
+.cd-table td:nth-child(6){
+    width:80px;
+    text-align:center;
+}
+
+.cd-table th:nth-child(7),
+.cd-table td:nth-child(7){
+    width:100px;
+    text-align:center;
+}
+
+.cd-table th:nth-child(8),
+.cd-table td:nth-child(8){
+    width:110px;
+    text-align:center;
+}
+
+.cd-table th:nth-child(9),
+.cd-table td:nth-child(9){
+    width:190px;
+    text-align:center;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status{
+    display:inline-block;
+    min-width:70px;
+    padding:6px 12px;
+    border-radius:20px;
+    text-align:center;
+    font-size:13px;
+    font-weight:600;
+}
+
+.good{
+    background:#DCFCE7;
+    color:#166534;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.view-btn,
+.folder-btn,
+.edit-btn,
+.delete-btn{
+    width:40px;
+    height:40px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:8px;
+
+    color:#fff;
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.view-btn{
+    background:#06B6D4;
+}
+
+.folder-btn{
+    background:#2563EB;
+}
+
+.edit-btn{
+    background:#F59E0B;
+}
+
+.delete-btn{
+    background:#EF4444;
+}
+
+.view-btn:hover,
+.folder-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   ALERT
+========================= */
+
+.alert-success{
+    background:#D4EDDA;
+    color:#155724;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.table-footer{
+    margin-top:20px;
+    display:flex;
+    justify-content:flex-end;
+    color:#6B7280;
+    font-size:14px;
+}
+
+
+
+.cd-table td{
+    height:60px;
+    vertical-align:middle;
+}
+.long-text{
+    width:220px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}

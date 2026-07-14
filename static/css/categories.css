@@ -1,0 +1,94 @@
+.table-card{
+    margin-top:30px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.table-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.table-header h3{
+    font-size:24px;
+    color:#1F2937;
+}
+
+.category-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.category-table th{
+    background:#F3F4F6;
+    color:#1F2937;
+    padding:15px;
+    text-align:left;
+    font-weight:600;
+}
+
+.category-table td{
+    padding:15px;
+    border-bottom:1px solid #E5E7EB;
+    vertical-align:middle;
+}
+
+.category-table tr:hover{
+    background:#F8FAFC;
+}
+
+.view-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    background:#2563EB;
+    color:white;
+    text-decoration:none;
+
+    padding:10px 18px;
+    border-radius:8px;
+
+    font-weight:600;
+    transition:.3s;
+}
+
+.view-btn:hover{
+    background:#1D4ED8;
+}
+
+.category-badge{
+    display:inline-block;
+    padding:6px 14px;
+    background:#E0E7FF;
+    color:#1E3A8A;
+    border-radius:20px;
+    font-weight:600;
+}
+
+.count-badge{
+    display:inline-block;
+    min-width:45px;
+    text-align:center;
+
+    padding:6px 12px;
+
+    background:#DCFCE7;
+    color:#166534;
+
+    border-radius:20px;
+    font-weight:600;
+}
+
+.table-footer{
+    margin-top:20px;
+    text-align:right;
+    color:#6B7280;
+    font-size:14px;
+}
