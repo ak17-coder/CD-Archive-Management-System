@@ -26,9 +26,6 @@ A Django-based web application for managing archived CDs and DVDs.
 - SQLite
 - OpenPyXL
 
-## Screenshots
-
-(Add screenshots here)
 
 ## How to Run
 
